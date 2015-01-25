@@ -1,7 +1,6 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Finds and caches the inverse of the matrix
 
-## Write a short comment describing this function
+## Creates a cashe of the inverse of the matrix attached to the matrix variable
 
 makeCacheMatrix <- function(x = matrix()) {
   i <- NULL
@@ -10,7 +9,7 @@ makeCacheMatrix <- function(x = matrix()) {
     i<<-NULL
   }
   get <- function() x
-  setinverse <- function(solve) i <<- solve##solve?
+  setinverse <- function(solve) i <<- solve
   getinverse<-function() i
   list(set=set, get=get, 
        setinverse=setinverse,
@@ -18,7 +17,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## checkes for a cashed inverse, if none exists finds inverse
 
 cacheSolve <- function(x, ...) {
   i<-x$getinverse()
